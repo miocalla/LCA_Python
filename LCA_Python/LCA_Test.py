@@ -36,5 +36,27 @@ class testLowestCommonAncestor(unittest.TestCase):
         self.assertEqual(findLowestCommonAncestor(root, 6, 7), 3)
         self.assertEqual(findLowestCommonAncestor(root, 4, 5), 2)
         
+    def testNullTree(self):
+        root = None
+        self.assertEqual(findLowestCommonAncestor(root, 2, 3), -1)
+        path = []
+        self.assertFalse(findPath(root, path, 8))
+        self.assertListEqual(path, [])
+        
     def testRootAsInput(self):
         self.assertEqual(findLowestCommonAncestor(root, 1, 4), 1)
+        
+    def testOnlyOneExists(self):
+        self.assertEqual(findLowestCommonAncestor(root, 4, 10), -1)
+        self.assertEqual(findLowestCommonAncestor(root, 21, 7), -1)
+        
+    def testLCASameNode(self):
+        self.assertEqual(findLowestCommonAncestor(root, 1, 1), 1)
+        self.assertEqual(findLowestCommonAncestor(root, 7, 7), 7)
+
+    def testNeitherExist(self):
+        self.assertEqual(findLowestCommonAncestor(root, 10, 8), -1)
+
+    
+        
+    

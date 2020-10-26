@@ -57,6 +57,8 @@ class testLowestCommonAncestor(unittest.TestCase):
     def testNeitherExist(self):
         self.assertEqual(findLowestCommonAncestor(root, 10, 8), -1)
 
-    
+    def testOnlyOneNode(self):
+        root = Node(10)
+        self.assertEqual(findLowestCommonAncestor(root, 10, 10), 10)
         
     

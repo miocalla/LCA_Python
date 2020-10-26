@@ -20,3 +20,21 @@ root.right.right = Node(7)
 
 class testLowestCommonAncestor(unittest.TestCase):
     
+    def setUp(self):
+        pass
+
+    def testNormalCases(self):
+       
+        # Same-level
+        self.assertEqual(findLowestCommonAncestor(root, 2, 3), 1)
+        self.assertEqual(findLowestCommonAncestor(root, 4, 6), 1)
+        # Different-Level
+        self.assertEqual(findLowestCommonAncestor(root, 2, 7), 1)
+        self.assertEqual(findLowestCommonAncestor(root, 4, 3), 1)
+        
+    def testLCANotRoot(self):
+        self.assertEqual(findLowestCommonAncestor(root, 6, 7), 3)
+        self.assertEqual(findLowestCommonAncestor(root, 4, 5), 2)
+        
+    def testRootAsInput(self):
+        self.assertEqual(findLowestCommonAncestor(root, 1, 4), 1)

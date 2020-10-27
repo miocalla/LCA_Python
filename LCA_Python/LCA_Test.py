@@ -87,7 +87,7 @@ class testLowestCommonAncestor(unittest.TestCase):
         self.assertTrue(findPath(root.right, path, 7))
         self.assertListEqual(path, [3, 7])
 
-    print('Successs.')
+    print('Success.')
 
 
 if __name__ == '__main__':

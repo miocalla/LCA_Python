@@ -2,7 +2,7 @@
 Created on 13 Oct 2020
 
 # GeeksforGeeks implementation
-@author: michaelocallaghan
+@author: michael o'callaghan
 '''
 class Node: 
     
@@ -16,11 +16,10 @@ def findPath( root, path, k):
     if root is None: 
         return False
   
-    # Store this node is path vector. The node will be removed if not in path from root to k 
     path.append(root.key) 
   
     # See if the k is same as root's key 
-    if root.key == k : 
+    if root.key == k: 
         return True
   
     # Check if in left or right sub-tree 

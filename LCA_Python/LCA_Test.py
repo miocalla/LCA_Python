@@ -61,4 +61,36 @@ class testLowestCommonAncestor(unittest.TestCase):
         root = Node(10)
         self.assertEqual(findLowestCommonAncestor(root, 10, 10), 10)
         
+    def testPathFinder(self):
+        path = []
+        # Root to itself
+        self.assertTrue(findPath(root, path, 1))
+        self.assertListEqual(path, [1])
+
+        path = []
+        # Right Side
+        self.assertTrue(findPath(root, path, 7))
+        self.assertListEqual(path, [1, 3, 7])
+
+        path = []
+        # Left Side
+        self.assertTrue(findPath(root, path, 2))
+        self.assertListEqual(path, [1, 2])
+
+        path = []
+        # No Path
+        self.assertFalse(findPath(root, path, 12))
+        self.assertListEqual(path, [])
+
+        # Path not from root
+        path = []
+        self.assertTrue(findPath(root.right, path, 7))
+        self.assertListEqual(path, [3, 7])
+
+    print('Successs.')
+
+
+if __name__ == '__main__':
+    unittest.main()
+        
     
